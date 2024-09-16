@@ -15,11 +15,16 @@ int scoreString(string s){
 
 int main(){
     string names[3];
-    string scores[3];
+    string scores[3] = {"nil","nil","nil"};
 
     cout << "Enter three names seperated by spaces. (no spaces inbetween first and last name)\n";
-    cin >> names[1] >> names[2] >> names[3];
-    cout << names[1] << " " << names[2] << " " << names[3] << " " << scoreString(names[3]);
+    cin >> names[0] >> names[1] >> names[2];
+    
+    for(int i = 0; i < 3; i++){
+        cout << "\n" << names[i] << " = " << scoreString(names[i]);
+    }
+
+    cout << "\n\nThe highest scored name is: " << scores[0];
 
     return 0;
 }
