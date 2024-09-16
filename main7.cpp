@@ -13,9 +13,18 @@ int scoreString(string s){
     return score;
 }
 
+string highScore(string arr[], int size){
+    string curHighest = arr[0];
+    for(int i = 1; i < size; i++){
+        if(scoreString(arr[i]) > scoreString(curHighest)){
+            curHighest = arr[i];
+        }
+    }
+    return curHighest;
+}
+
 int main(){
     string names[3];
-    string scores[3] = {"nil","nil","nil"};
 
     cout << "Enter three names seperated by spaces. (no spaces inbetween first and last name)\n";
     cin >> names[0] >> names[1] >> names[2];
@@ -24,7 +33,7 @@ int main(){
         cout << "\n" << names[i] << " = " << scoreString(names[i]);
     }
 
-    cout << "\n\nThe highest scored name is: " << scores[0];
+    cout << "\n\nThe highest scored name is: " << highScore(names,3);
 
     return 0;
 }
